@@ -32,9 +32,7 @@
 
         //When DOM loaded we attach click event to button
         $(document).ready(function() {
-
-            //after button is clicked we download the data
-            $('.button').click(function(){
+               $('.button').click(function(){
 
                 //start ajax request
                 $.ajax({
@@ -53,7 +51,20 @@
                 });
             });
         });
-    </script>
 
+        var ourRequest = new XMLHttpRequest(); //for ajax
+        ourRequest.open('GET', 'https://github.com/bio3boykamote/chart/blob/master/data.json'); //request the data from dg3 data.json
+        ourRequest.onload = function()
+        {
+            var ourdata = JSON.parse(ourRequest.responseText); //parse the data.json
+
+                   	// adding display 1
+
+
+        };
+        ourRequest.send();
+
+        var positions = JSON.parse(localStorage.positions || "{}");
+    </script>
 </body>
 </html>
